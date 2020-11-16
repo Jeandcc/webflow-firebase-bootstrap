@@ -1,2 +1,2 @@
 # Webflow-Vue-Firebase-BOOTSTRAP
-Starter Code for Webflow-Vue-TypeScript projects powered by Webpack
+Starter Code for Webflow-Vue-Firebase projects powered by Webpack and TypeScript.
