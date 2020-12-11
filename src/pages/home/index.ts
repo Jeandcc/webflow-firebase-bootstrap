@@ -1,4 +1,4 @@
-import Vue from "vue";
+import Vue from 'vue';
 
 new Vue({
   data() {
@@ -9,7 +9,7 @@ new Vue({
 
   methods: {
     increase() {
-      this.counter++;
+      this.counter += 1;
     },
   },
-}).$mount("#app");
+}).$mount('#app');
