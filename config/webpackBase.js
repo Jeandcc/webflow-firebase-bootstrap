@@ -1,23 +1,23 @@
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+import VueLoaderPlugin from 'vue-loader/lib/plugin.js';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
-const baseConfig = {
-  mode: "production",
+export const baseConfig = {
+  mode: 'production',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: 'vue-loader',
         options: {
           loaders: {
             ts: [
               {
-                loader: "ts-loader",
+                loader: 'ts-loader',
                 options: {
                   appendTsSuffixTo: [/\.vue$/],
                 },
@@ -32,16 +32,23 @@ const baseConfig = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".css"],
+    extensions: ['.tsx', '.ts', '.js', '.css'],
     alias: {
-      vue$: "vue/dist/vue.esm.js",
+      vue$: 'vue/dist/vue.esm.js',
     },
   },
   plugins: [new VueLoaderPlugin(), new CleanWebpackPlugin()],
+  optimization: {
+    runtimeChunk: 'single',
+    usedExports: true,
+  },
 };
 
-const pageEntries = {
-  home: "./src/pages/home/index.ts",
-};
+export const pageEntries = {
+  shared: ['vue'],
 
-module.exports = { baseConfig, pageEntries };
+  home: {
+    import: './src/pages/home/index.ts',
+    dependOn: 'shared',
+  },
+};

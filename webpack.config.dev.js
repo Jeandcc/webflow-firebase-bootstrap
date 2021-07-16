@@ -1,16 +1,16 @@
-const { baseConfig, pageEntries } = require("./config/webpackBase");
+import { baseConfig, pageEntries } from './config/webpackBase.js';
 
-const path = require("path");
+import path from 'path';
 
-baseConfig.mode = "development";
-module.exports = [
+baseConfig.mode = 'development';
+export default [
   {
-    name: "Local Overrides",
+    name: 'Local Overrides',
     entry: pageEntries,
     output: {
       path: path.resolve(
         __dirname,
-        "local-project-xxx/project-xxx.web.app/scripts/"
+        'local-project-xxx/project-xxx.web.app/scripts/',
       ),
     },
     ...baseConfig,

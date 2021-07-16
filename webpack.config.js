@@ -1,15 +1,15 @@
-let { baseConfig, pageEntries } = require("./config/webpackBase");
+import { baseConfig, pageEntries } from './config/webpackBase.js';
 
-const path = require("path");
+import path from 'path';
 
-baseConfig.mode = "production";
+baseConfig.mode = 'production';
 
-module.exports = [
+export default [
   {
-    name: "Pages",
+    name: 'Pages',
     entry: pageEntries,
     output: {
-      path: path.resolve(__dirname, "public/scripts/"),
+      path: path.resolve(process.cwd(), 'public/scripts/'),
     },
     ...baseConfig,
   },
