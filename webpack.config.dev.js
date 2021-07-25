@@ -9,7 +9,7 @@ export default [
     entry: pageEntries,
     output: {
       path: path.resolve(
-        __dirname,
+        process.cwd(),
         'local-project-xxx/project-xxx.web.app/scripts/',
       ),
     },
