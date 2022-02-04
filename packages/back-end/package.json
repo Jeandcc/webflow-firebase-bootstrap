@@ -1,0 +1,57 @@
+{
+  "name": "@project-xxx/back-end",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "say-hello": "tsc && cross-env NODE_ENV=development node lib/scripts/sayHello.js",
+    "lint": "eslint --ext .js,.ts .",
+    "build": "yarn handlebars src/templates/ -f src/templates/precompiled.js --extension \"hbs\" -c handlebars/runtime && webpack --config webpack.config.js",
+    "start:dev": "cross-env NODE_ENV=development npm run build && firebase functions:shell -P dev",
+    "start:prod": "cross-env NODE_ENV=production npm run build && firebase functions:shell -P prod",
+    "deploy:dev": "cross-env NODE_ENV=production firebase deploy --only functions -P dev",
+    "deploy:prod": "cross-env NODE_ENV=production firebase deploy --only functions -P prod",
+    "logs": "firebase functions:log",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "engines": {
+    "node": "12"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "firebase-admin": "9.4.0",
+    "firebase-functions": "^3.15.5",
+    "@google-cloud/error-reporting": "^2.0.4",
+    "@google-cloud/secret-manager": "^3.10.1",
+    "handlebars": "^4.7.7",
+    "bottleneck": "^2.19.5",
+    "webflow-api": "^0.5.4",
+    "closest-match": "^1.3.3",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@project-xxx/types": "*",
+    "@types/jest": "^27.0.2",
+    "@types/yup": "^0.29.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "cli-select": "^1.1.2",
+    "closest-match": "^1.3.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^25.3.4",
+    "generate-package-json-webpack-plugin": "^2.5.1",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.5.4",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

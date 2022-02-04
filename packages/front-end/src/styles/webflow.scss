@@ -1,0 +1,16 @@
+.w-lightbox-backdrop {
+  z-index: 99999;
+}
+
+/* START - Slider Dots */
+.w-slider-dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background-color: #ddd;
+
+  &.w-active {
+    background-color: #cc0000;
+  }
+}
+/* END - Slider Dots */

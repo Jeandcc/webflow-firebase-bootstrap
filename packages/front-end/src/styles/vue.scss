@@ -1,0 +1,23 @@
+/* To not show these in the Live Website, but show them in the editor */
+html:not(.wf-design-mode) {
+  .w_templates,
+  [v-cloak-live] {
+    display: none;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}
+
+/* START - Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+/* END - Transitions */

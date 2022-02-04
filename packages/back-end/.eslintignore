@@ -1,0 +1,11 @@
+# don't lint node_modules
+node_modules
+
+# don't lint build output
+lib
+
+# don't lint email template outputs
+src/templates/precompiled.js
+
+# don't lint configuration files
+jest.config.js

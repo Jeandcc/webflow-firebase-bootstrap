@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "baseUrl": "./src",
+    "paths": { "@/*": ["*"] }
+  },
+  "compileOnSave": true,
+  "include": ["src", "scripts"],
+  "exclude": ["node_modules", "lib", "dist"],
+  "references": [{ "path": "../types" }]
+}

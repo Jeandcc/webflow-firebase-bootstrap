@@ -1,0 +1,12 @@
+# don't lint node_modules
+node_modules
+
+# don't lint build files
+build
+public
+
+/src/reportWebVitals.ts
+
+# don't lint JS files
+**/*.js
+/*.js

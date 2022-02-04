@@ -1,37 +1,28 @@
 {
   "name": "project-xxx",
+  "private": true,
   "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jean Costa <jean.adcc@gmail.com>",
   "license": "MIT",
-  "type": "module",
-  "sideEffects": [
-    "*.scss"
+  "workspaces": [
+    "packages/*"
   ],
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "firebase deploy",
-    "build": "webpack --config ./webpack.config.js",
-    "dev": "webpack -w --config ./webpack.config.dev.js"
+    "back-end": "yarn workspace @project-xxx/back-end",
+    "front-end": "yarn workspace @project-xxx/front-end",
+    "types": "yarn workspace @project-xxx/types"
   },
-  "dependencies": {
-    "vue": "^2.6.12"
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.9.1",
-    "@typescript-eslint/parser": "^4.9.1",
-    "clean-webpack-plugin": "^3.0.0",
-    "eslint": "^7.15.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^7.0.0",
-    "eslint-import-resolver-typescript": "^2.3.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.2.0",
-    "eslint-plugin-vue": "^7.2.0",
-    "prettier": "^2.2.1",
-    "ts-loader": "^8.0.7",
-    "typescript": "^4.0.5",
-    "vue-loader": "^15.9.5",
-    "vue-template-compiler": "^2.6.12",
-    "webpack": "^5.3.2",
-    "webpack-cli": "4.7.0"
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4"
   }
 }

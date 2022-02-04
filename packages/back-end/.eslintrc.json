@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
+    "import/internal-regex": "^@project-xxx/"
+  },
+
+  "env": {
+    "es2021": true,
+    "node": true,
+    "jest/globals": true
+  },
+
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "prettier",
+    "plugin:jest/all"
+  ],
+
+  "parser": "@typescript-eslint/parser",
+
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./"
+  },
+
+  "plugins": ["@typescript-eslint", "import", "jest"],
+
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.spec.ts", "scripts/**"] }
+    ],
+
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      { "js": "never", "ts": "never" }
+    ]
+  }
+}

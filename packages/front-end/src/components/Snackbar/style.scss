@@ -1,0 +1,19 @@
+@use "@material/snackbar/mdc-snackbar";
+
+.mdc-snackbar {
+  z-index: 99999;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  top: auto;
+
+  .mdc-snackbar__surface {
+    background: #67ae62;
+  }
+}
+
+.mdc-snackbar.cc-danger {
+  .mdc-snackbar__surface {
+    background: #ff0000;
+  }
+}
