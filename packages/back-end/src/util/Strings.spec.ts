@@ -1,6 +1,6 @@
 import StringUtils from "./Strings";
 
-describe("String Utils", () => {
+describe("string Utils", () => {
   it("removes substring if it exists", () => {
     const input = "Hello World";
     const expectedOutput = "World";
@@ -42,7 +42,7 @@ describe("String Utils", () => {
       ]
     );
 
-    expect(keysMap).toEqual({
+    expect(keysMap).toStrictEqual({
       "test-name": "test-name",
       "test-field": "test-field-2",
       // "third-field": "field-3",

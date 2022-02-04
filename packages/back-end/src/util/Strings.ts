@@ -1,4 +1,10 @@
+/* eslint-disable no-continue */
+/* eslint-disable no-restricted-syntax */
+
 import { closestMatch, distance as getMatchDistance } from "closest-match";
+
+// This method will only be called during local development.
+// eslint-disable-next-line import/no-extraneous-dependencies
 import cliSelect from "cli-select";
 
 interface IFieldForMapping {

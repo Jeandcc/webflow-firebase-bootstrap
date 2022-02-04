@@ -31,6 +31,12 @@
   "plugins": ["@typescript-eslint", "import", "jest"],
 
   "rules": {
+    "jest/prefer-lowercase-title": "off",
+    "jest/prefer-expect-assertions": "off",
+    "jest/require-hook": "off",
+    "jest/no-hooks": ["error", { "allow": ["beforeAll", "afterAll"] }],
+    // TODO: Update codebase and re-enable rules above
+
     "import/no-extraneous-dependencies": [
       "error",
       { "devDependencies": ["**/*.spec.ts", "scripts/**"] }

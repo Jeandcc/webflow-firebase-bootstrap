@@ -8,8 +8,8 @@ interface ITestInterface {
   field2: number;
 }
 
-describe("Firestore Converters", () => {
-  describe("Collection References", () => {
+describe("firestore Converters", () => {
+  describe("collection References", () => {
     const testCollectionPath = "users/user1234/notifications";
     const collectionRef =
       collectionConverter<ITestInterface>(testCollectionPath);
@@ -36,7 +36,7 @@ describe("Firestore Converters", () => {
     });
   });
 
-  describe("Collection Group References", () => {
+  describe("collection Group References", () => {
     const collectionPath = "users";
     const groupRef = collectionGroupConverter<ITestInterface>(collectionPath);
 

@@ -1,9 +1,9 @@
 import AppErrors, { TApplicationError } from "./AppErrors";
 
-describe("App Errors", () => {
+describe("app Errors", () => {
   const ERROR_LABEL: TApplicationError = "AUTH/UNAUTHORIZED";
 
-  it("Successfully constructs error object without details", () => {
+  it("successfully constructs error object without details", () => {
     const errorObj = AppErrors(ERROR_LABEL);
 
     expect(errorObj.message).toBe(ERROR_LABEL);
@@ -11,7 +11,7 @@ describe("App Errors", () => {
     expect(errorObj.httpErrorCode.status).toBe(403);
   });
 
-  it("Successfully constructs error object with details", () => {
+  it("successfully constructs error object with details", () => {
     const errorObj = AppErrors(ERROR_LABEL, { reason: "TEST" });
 
     expect(errorObj.message).toBe(ERROR_LABEL);

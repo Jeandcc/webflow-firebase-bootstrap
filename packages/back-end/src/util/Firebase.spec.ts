@@ -7,7 +7,7 @@ interface ITestDoc {
   field1: string;
 }
 
-describe("Firebase Utils", () => {
+describe("firebase Utils", () => {
   it("successfully deletes a collection", async () => {
     const collectionRef = collectionConverter<ITestDoc>("testDocs");
 
@@ -43,7 +43,7 @@ describe("Firebase Utils", () => {
     expect(usersData[usersIds[1]].email).toBeDefined();
   });
 
-  describe("Batch Operations", () => {
+  describe("batch Operations", () => {
     const TEST_DOC_REF = dbCollections.users().doc("testUserId");
 
     const addDummyBatchOperations = (qty = 750) => {

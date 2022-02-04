@@ -3,9 +3,11 @@ node_modules
 
 # don't lint build output
 lib
+dist
 
 # don't lint email template outputs
 src/templates/precompiled.js
 
 # don't lint configuration files
 jest.config.js
+webpack.config.js

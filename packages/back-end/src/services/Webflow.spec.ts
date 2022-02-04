@@ -7,13 +7,13 @@ import Webflow from "./Webflow";
 
 type TWfItem = WebflowApiModel.CollectionItem;
 
-describe("Webflow", () => {
+describe("webflow", () => {
   const TEST_SITE_NAME = "DEV - Backend Tests Target";
   const TEST_SITE_ID = "6180476512a8f7ed3fdde199";
   const TEST_COLLECTION_ID = "6180476512a8f77717dde25c";
   const TEST_ITEM_ID = "6180476512a8f71e00dde319";
 
-  it("Successfully gets all the websites under account", async () => {
+  it("successfully gets all the websites under account", async () => {
     const sites = await Webflow.getAllWebsites();
     expect(sites.length).toBeGreaterThan(0);
   });
@@ -44,22 +44,22 @@ describe("Webflow", () => {
     expect(allRateLimitedResponsesWereSuccessful).toBe(true);
   }, 120000);
 
-  it("Successfully gets data specific to a given website", async () => {
+  it("successfully gets data specific to a given website", async () => {
     const site = await Webflow.getWebsiteData(TEST_SITE_ID);
     expect(site.name).toBe(TEST_SITE_NAME);
   });
 
-  it("Successfully gets all collections of website", async () => {
+  it("successfully gets all collections of website", async () => {
     const collections = await Webflow.getAllCollectionsOfWebsite(TEST_SITE_ID);
     expect(collections.length).toBeGreaterThan(0);
   });
 
-  it("Successfully gets collection data", async () => {
+  it("successfully gets collection data", async () => {
     const data = await Webflow.getCollection(TEST_COLLECTION_ID);
     expect(data._id).toBe(TEST_COLLECTION_ID);
   });
 
-  it("Successfully gets cached collection data", async () => {
+  it("successfully gets cached collection data", async () => {
     const data = await Webflow.getCollection(TEST_COLLECTION_ID);
     expect(data._id).toBe(TEST_COLLECTION_ID);
 
@@ -72,17 +72,17 @@ describe("Webflow", () => {
     expect(cachedData._id).toBe(TEST_COLLECTION_ID);
   });
 
-  it("Successfully gets all items of a collection of website", async () => {
+  it("successfully gets all items of a collection of website", async () => {
     const items = await Webflow.getAllItemsOfCollection(TEST_COLLECTION_ID);
     expect(items.length).toBeGreaterThan(0);
   }, 30000);
 
-  it("Successfully gets item data", async () => {
+  it("successfully gets item data", async () => {
     const data = await Webflow.getItem(TEST_COLLECTION_ID, TEST_ITEM_ID);
     expect(data._id).toBe(TEST_ITEM_ID);
   });
 
-  it("Successfully normalizes item data", async () => {
+  it("successfully normalizes item data", async () => {
     const data = await Webflow.getItem(TEST_COLLECTION_ID, TEST_ITEM_ID, true);
 
     const normalizedRefData: TWfItem = data.theme;
@@ -97,7 +97,7 @@ describe("Webflow", () => {
     expect(didNormalizeMultiRef).toBeTruthy();
   }, 20000);
 
-  it("Successfully gets cached item data", async () => {
+  it("successfully gets cached item data", async () => {
     const data = await Webflow.getItem(TEST_COLLECTION_ID, TEST_ITEM_ID);
     expect(data._id).toBe(TEST_ITEM_ID);
 
@@ -110,7 +110,7 @@ describe("Webflow", () => {
     expect(cachedData._id).toBe(TEST_ITEM_ID);
   }, 10000);
 
-  it("Successfully updates an item of website", async () => {
+  it("successfully updates an item of website", async () => {
     const newRandStr = Math.random().toString().substr(0, 7);
 
     await Webflow.updateItem({

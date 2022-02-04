@@ -9,6 +9,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prepare": "husky install",
     "back-end": "yarn workspace @project-xxx/back-end",
     "front-end": "yarn workspace @project-xxx/front-end",
     "types": "yarn workspace @project-xxx/types"
