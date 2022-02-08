@@ -3,7 +3,6 @@ import webpack from 'webpack';
 import VueLoaderPlugin from 'vue-loader/lib/plugin.js';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
-
 const IS_LOCAL_DEV = process.argv.includes('-w');
 
 export default {
@@ -73,14 +72,20 @@ export default {
   },
 
   entry: {
-    'home': {
+    home: {
       import: './src/pages/home/index.ts',
+    },
+    global: {
+      import: './src/pages/global/index.ts',
     },
   },
 
   output: {
     path: IS_LOCAL_DEV
-      ? path.resolve(process.cwd(),`local-project-xxx/project-xxx.web.app/scripts/`,)
+      ? path.resolve(
+          process.cwd(),
+          `local-project-xxx/project-xxx.web.app/scripts/`,
+        )
       : path.resolve(process.cwd(), `public/scripts/`),
   },
 };
