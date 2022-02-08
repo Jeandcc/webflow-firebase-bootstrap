@@ -12,7 +12,14 @@
     "esModuleInterop": true,
     "allowJs": true,
     "baseUrl": "./src",
-    "paths": { "@/*": ["*"] }
+    "paths": {
+      "@api/*": ["api/*"],
+      "@models/*": ["models/*"],
+      "@services/*": ["services/*"],
+      "@util/*": ["util/*"],
+      "@common/*": ["common/*"],
+      "@templates/*": ["templates/*"]
+    }
   },
   "compileOnSave": true,
   "include": ["src", "scripts"],
