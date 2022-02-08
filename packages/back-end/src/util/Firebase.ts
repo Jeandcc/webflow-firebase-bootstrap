@@ -49,13 +49,18 @@ export default class FireUtil {
     data: T
   ): void;
   static addBatchOperation<T>(
+    operation: "delete",
+    ref: TCustomDocRef<T>,
+    data?: T
+  ): void;
+  static addBatchOperation<T>(
     operation: "set",
     ref: TCustomDocRef<T>,
     data: Partial<T>,
     setOpts?: FirebaseFirestore.SetOptions
   ): void;
   static addBatchOperation<T>(
-    operation: "create" | "update" | "set",
+    operation: "create" | "update" | "set" | "delete",
     ref: TCustomDocRef<T>,
     data: Partial<T> | T,
     opts?: FirebaseFirestore.Precondition | FirebaseFirestore.SetOptions
