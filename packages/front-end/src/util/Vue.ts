@@ -11,6 +11,7 @@ export default class VueUtils {
 
     // Move to bottom of body so it doesn't remain inside any Vue App Container
     templatesContainer.appendTo('body');
+    templatesContainer.hide();
 
     // Remove all style tags and templates from inside Vue App Containers
     $('style').appendTo(templatesContainer);

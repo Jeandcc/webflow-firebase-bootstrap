@@ -1,5 +1,3 @@
 import VueUtils from '@/util/Vue';
 
-$(async () => {
-  VueUtils.fixWebflowAttributes();
-});
+VueUtils.fixWebflowAttributes();

@@ -23,6 +23,4 @@ export default class StringUtils {
 
     return initials.toUpperCase();
   }
-
-
 }
