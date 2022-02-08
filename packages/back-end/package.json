@@ -5,14 +5,16 @@
   "scripts": {
     "say-hello": "tsc && cross-env NODE_ENV=development node lib/scripts/sayHello.js",
     "lint": "eslint --ext .js,.ts .",
-    "build": "yarn handlebars src/templates/ -f src/templates/precompiled.js --extension \"hbs\" -c handlebars/runtime && webpack --config webpack.config.js",
-    "start:dev": "cross-env NODE_ENV=development npm run build && firebase functions:shell -P dev",
-    "start:prod": "cross-env NODE_ENV=production npm run build && firebase functions:shell -P prod",
-    "deploy:dev": "cross-env NODE_ENV=production firebase deploy --only functions -P dev",
-    "deploy:prod": "cross-env NODE_ENV=production firebase deploy --only functions -P prod",
-    "logs": "firebase functions:log",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "dev:dev": "cross-env NODE_ENV=development webpack --watch",
+    "dev:prod": "cross-env NODE_ENV=production webpack --watch",
+    "start:dev": "firebase functions:shell -P dev",
+    "start:prod": "firebase functions:shell -P prod",
+    "build": "yarn handlebars src/templates/ -f src/templates/precompiled.js --extension \"hbs\" -c handlebars/runtime && webpack",
+    "deploy:dev": "cross-env NODE_ENV=production yarn build && firebase deploy --only functions -P dev",
+    "deploy:prod": "cross-env NODE_ENV=production yarn build && firebase deploy --only functions -P prod",
+    "logs": "firebase functions:log -P prod"
   },
   "engines": {
     "node": "12"
