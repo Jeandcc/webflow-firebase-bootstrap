@@ -20,8 +20,14 @@ After cloning this repository, follow the following steps:
 2. Update the dev output folder in the `webpack.config.js` file. Structure it like so: `local-{{project-name}}/{{project-domain}}/scripts`
 3. Run `yarn deploy`
 
-## Usage
+## Front-End Development
 
-1. For each new page, update the `webpack.config.js` file, with new pages added under the object called pageEntries.
-2. When ready to start developing, write your new code, run `yarn dev` and use the [Content Override](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/javascript/overrides) feature of browsers to override the application scripts with code from your machine.
+1. For each new page, update the `webpack.config.js` file and add new pages under the 'entries' object of the configuration.
+2. When ready to start developing, run `yarn dev`, write your code, and use the [Content Override](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/javascript/overrides) feature of browsers to override the application scripts with code from your machine.
 3. To see new changes on the page you're working at, keep the developer panel open on your browser and reload the page.
+
+## Back-End Development
+1. To work on your back-end functions and test them with the Firebase Shell, open two terminal windows;
+2. From the first terminal window, run `yarn start:dev`;
+3. From the second terminal window, run `yarn dev:dev`;
+4. Go back to the first terminal window and interact with your back-end functions following [Firebase's guide](https://firebase.google.com/docs/functions/local-shell#invoke_https_functions). Example: `users.login({email:"John Doe", password:"12345"})`
