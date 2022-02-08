@@ -27,7 +27,7 @@ After cloning this repository, follow the following steps:
 2. To work on your back-end functions and test them with the Firebase Shell, open two terminal windows;
 3. From the first terminal window, run `yarn start:dev` or `yarn start:prod`;
 4. From the second terminal window, run `yarn dev:dev` or `yarn dev:prod`;
-5. Go back to the first terminal window and interact with your back-end functions following [Firebase's guide](https://firebase.google.com/docs/functions/local-shell#invoke_https_functions). Example: `users.login({email:"John Doe", password:"12345"})`
+5. Go back to the first terminal window and interact with your back-end functions following [Firebase's guide](https://firebase.google.com/docs/functions/local-shell#invoke_https_functions). Example: `users.login({email:"john.doe@acme.com", password:"12345"})`
 
 ## Back-End Deployment
 1. Run `yarn deploy:prod` or `yarn deploy:dev` to have your local changes take effect and be pushed live
