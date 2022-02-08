@@ -7,7 +7,7 @@ import ArrayUtils from '../src/util/Array';
 export default class SeleniumTestUtils {
   private static driver: webdriver.ThenableWebDriver;
 
-  static BASE_URL = 'https://dev-firebase-headless.webflow.io/';
+  static BASE_URL = 'https://project-xxx.webflow.io/';
 
   static getDriver(): webdriver.ThenableWebDriver {
     if (this.driver) return this.driver;
