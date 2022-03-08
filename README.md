@@ -9,8 +9,11 @@ After cloning this repository, follow the following steps:
 3. Still at the root of the repository, run `yarn prepare` so Husky can be set up
 4. Head over to the [Firebase Console](https://console.firebase.google.com/) and setup the Firebase
    project that will be used for this project. Note down the project information.
-5. Update firebase-related information on all `firebase.json` files
-6. Update the project dependencies according to your necessities.
+5. CD into `packages/types` and run `yarn build`
+6. CD into the `packages/front-end` folder, and run the following commands: `firebase login:use YOUR_FIREBASE_EMAIL_HERE`. This will make firebase use the correct account to deploy the code of this application.
+7. CD into the `packages/back-end` folder and run the same command you ran in step #6
+8. [Register a web app in your Firebase project](https://firebase.google.com/docs/web/setup#register-app), copy the configuration provided by Firebase and paste it into `packages/front-end/src/services/firebase.ts` dev config and prod config. If in the future you decide to setup a new project in firebase to act as a development environment, make sure to replace the value of "devConfig".
+
 
 ## Front-End Development
 1. For each new page, update the `webpack.config.js` file and add new pages under the 'entries' object of the configuration.
