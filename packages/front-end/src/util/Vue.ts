@@ -47,6 +47,33 @@ export default class VueUtils {
       el.removeAttribute('v-ref');
     });
 
+    // Fix for custom checkboxes
+    document
+      .querySelectorAll(`.w-checkbox input[type='checkbox'][v-model]`)
+      .forEach(inputEl => {
+        const vModelVariable = inputEl.getAttribute('v-model');
+
+        const parentEl = inputEl.parentElement;
+        if (!parentEl) return;
+
+        const customCheckboxElement = parentEl.querySelector(
+          '.w-checkbox-input--inputType-custom',
+        );
+        if (!customCheckboxElement) return;
+
+        // Removes class targeted by webflow's script that changes the
+        // custom checkbox styles
+        customCheckboxElement.classList.remove('w-checkbox-input');
+        customCheckboxElement.classList.remove('w--redirected-checked');
+
+        // Show the custom checkbox styles when the input is checked
+        // in Vue
+        customCheckboxElement.setAttribute(
+          'v-bind:class',
+          `{'w--redirected-checked': ${vModelVariable}}`,
+        );
+      });
+
     document.querySelectorAll('[v-cloak-live]').forEach(el => {
       el.setAttribute('v-cloak', 'true');
       el.removeAttribute('v-cloak-live');
